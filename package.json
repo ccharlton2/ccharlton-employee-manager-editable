@@ -1,7 +1,7 @@
 {
-  "name": "authentication",
+  "name": "ccharlton-employee-manager-editable",
   "version": "1.0.0",
-  "description": "simple use of passport-local authentiction",
+  "description": "simple CRUD from json",
   "main": "server.js",
   "scripts": {
     "server": "nodemon server/index.js  --watch ./server",
@@ -14,7 +14,7 @@
   "keywords": [
     "none"
   ],
-  "author": "james foley",
+  "author": "christian charlton",
   "license": "MIT",
   "dependencies": {
     "cookie-session": "^1.4.0",

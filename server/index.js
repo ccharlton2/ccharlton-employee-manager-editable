@@ -56,6 +56,15 @@ app.use(express.static(path.join(__dirname, `../www`), {extensions: ["html", 'ht
  // Tell Express that you want to access POST Request body
  // Setup   app.use(express.urlencoded({extended:true}))
 
+// home
+app.get("/", (req, res) => {
+  if (req.session.isValid) {
+    res.render("index");
+  } else {
+    res.sendFile(path.join(__dirname, "../client/index.html"));
+  }
+});
+
  // Basic Example of a Protected Route
  app.get('/dashboard', (req, res)=>{
           if(req.session.isValid){
@@ -73,7 +82,7 @@ app.use(express.static(path.join(__dirname, `../www`), {extensions: ["html", 'ht
  })
  app.post('/login', (req, res)=>{
    // if your incomming name value pairs are alot then create an object
-    const credentials = {
+   const credentials = {
       email:req.body.email,
       password:req.body.password
     }
